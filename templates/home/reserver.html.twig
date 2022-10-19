@@ -1,0 +1,65 @@
+{% extends 'basePage.html.twig' %}
+{% block title %} {{parent()}} | Réserver{% endblock %}
+
+{% block div %}Réserver{% endblock %}
+
+{% block style %}
+<style>
+body{
+    min-height: 100vh;
+    max-height: 10000vh;
+}
+.header-container{
+    background-image: url({{ asset('images/decantore.jpg' ) }});
+    }
+.nav-item{
+    background-color: rgba(255, 255, 255, 0.4) !important;
+}
+.logoNom{
+    background-color: rgba(255, 255, 255, 0.4) ;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+}
+
+    </style>
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+   
+        <div class="d-flex flex-column col-xs-12 align-items-center containerPresentation">
+            <h2 class="titreGold text-center pt-4">PROCHAINEMENT,<br>
+
+            POSSIBILITÉ DE RÉSERVER EN LIGNE</h2>
+            <p class="policePhilosopher w-75 py-3 text-center">...
+            <br>
+            </p>
+        </div>
+ 
+    
+        <div class="d-flex flex-sm-column justify-content-center flex-lg-row align-items-center sectionPresLacarte">
+            
+            <div class="asideContent d-flex d-none d-lg-block col-6 align-items-center flex-wrap">
+            
+                
+                    <div class="d-flex flex-row mb-3"><img class="asideImgs" src="{{ asset('images/DecouvrirLaCarte1.jpg' ) }}" width="300px" alt="">
+                    <img class="asideImgs ps-2" src="{{ asset('images/DecouvrirLaCarte2.jpg' ) }}" width="300px" alt=""></div> 
+                    
+                    <div class="d-flex flex-row mb-3"><img class="asideImgs" src="{{ asset('images/DecouvrirLaCarte3.jpg' ) }}" width="300px" alt="">
+                    <img class="asideImgs ps-2" src="{{ asset('images/DecouvrirLaCarte4.jpg' ) }}" width="300px" alt=""></div>
+            </div>
+        </div>
+  
+
+
+
+
+
+    
+</div>
+
+   
+
+{% endblock %}

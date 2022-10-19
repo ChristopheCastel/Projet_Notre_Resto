@@ -1,0 +1,353 @@
+{% extends 'basePage.html.twig' %}
+
+{% block title %} {{ parent() }}|Les menus {% endblock %}
+
+{% block div %}Les menus{% endblock %}
+
+{% block style %}
+<style>
+  
+.header-container{
+    background-image: url('https://www.cottagebise.com/photos/sliders/pages/sliderrestaurant2_117_fr.jpg');
+}
+.nav-item{
+    background-color: rgba(255, 255, 255, 0.4) !important;
+}
+.logoNom{
+    background-color: rgba(255, 255, 255, 0.4) ;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+}
+.tout{
+    background-color: #2C3C3C;
+    color:white;
+}
+.entreePlatDessert{
+    font-size:30px;
+}
+
+h4, p{
+    font-family: 'Permanent Marker', 'cursive';
+}
+
+</style>
+{% endblock %}
+
+{% block body %}
+
+{# LE MENU P'TI JOUEUR  #}
+<div class="container mt-5 col-xl-12 col-lg-10 col-md-6 col-sm-4 d-flex justify-content-between">
+    <div class="Tijoueur tout  col-5">
+        {# sélection du menu avec l'id n°3 => "le pt'ijoueur" #}
+        {% for menusCat in menusCat %}
+                
+            {% if menusCat.id == 9 %}
+                <h4 class="text-center  display-6  text-decoration-underline  py-2 tracking-in-expand-fwd">{{ menusCat.titre }}</h4>
+
+                    <p class="text-center display-6">Entrée + Plat + Déssert</p>
+
+                    <p class="display-6 text-center">{{ menusCat.prix| number_format(2) }}€</p>
+
+                    {# on va piocher la catégorie produit avec l'id 7 => les entrées #}
+                    {% for cat in categorieProduit %}
+                        {# Affichage du titre  #}
+                        {% if cat.id == 7 %}
+                            <div class="text-center ">
+                                <p class="display-6 text-decoration-underline">{{ cat.titre }}</p>
+                            </div>
+                                
+                            <br>
+
+                            {# Affichage des entrées #}
+                            <div class="text-center  ">
+
+                                {% for pdt in produits %}
+                                    {# on va piocher les produits ayant la catégorie produit 7 => #}
+                                    {% if pdt.categorieMenus.id == 9  %}
+                                                    
+                                        {% if pdt.categorie.id == 7 %}
+                                        <p>
+                                        {{pdt.titre}}
+                                        </p>
+                                        {% endif %}
+                                                    
+                                                    
+                                                
+                                                
+                                    {% endif %}
+                                            
+
+
+                                {% endfor %}
+                            </div>
+                            <hr>
+                            
+                        
+            {% endif %}
+
+
+                                
+        {% endfor %}  
+                    {# FIN AFFICHAGE DES ENTREES #}
+                            
+                    {# Les plats #}
+                   
+                {% for cat in categorieProduit %}
+                            {# on va piocher la catégorie produit avec l'id 8 => les plats #}
+                            {% if cat.id == 8 %}
+                                    {# Affichage du titre  #}
+                                    <p class="text-center display-6 text-decoration-underline  ">
+                                        {{ cat.titre }}
+                                    </p>
+                                    <br>
+
+                            {# Affichage des plats #}
+                            <div class="text-center  ">
+
+                                {% for pdt in produits %}
+                                        {# on va piocher les produits ayant la catégorie produit 8 => #}
+                                        {% if pdt.categorieMenus.id == 9 %}
+                                                    
+                                                    {% if pdt.categorie.id == 8 %}
+                                                    
+                                                   <p> {{pdt.titre}}</p>
+                                                    {% endif %}
+                                                    
+                                                    
+                                                
+                                                
+                                        {% endif %}
+                                            
+
+                                {% endfor %}
+                                </div>
+                                <hr>
+                                
+                            
+                            {% endif %}
+
+
+                            
+                {% endfor %}  
+                
+
+
+                {# FIN DES PLATS #}
+
+                {# LES DESSERTS #}
+
+        {% for cat in categorieProduit %}
+                        {# on va piocher la catégorie produit avec l'id 9 => les desserts #}
+                        {% if cat.id == 9 %}
+                                {# Affichage du titre  #}
+                                <p class="text-center text-decoration-underline display-6  ">
+                                    {{ cat.titre }}
+                                </p>
+                                <br>
+
+                        {# Affichage des desserts #}
+                        <div class="text-center  ">
+
+                            {% for pdt in produits %}
+                                    {# on va piocher les produits ayant la catégorie produit 9 => #}
+                                    {% if pdt.categorieMenus.id == 9 %}
+                                                
+                                                {% if pdt.categorie.id == 9 %}
+                                                
+                                                <p>{{pdt.titre}}</p>
+                                                {% endif %}
+                                                        
+                                    {% endif %}
+
+                            {% endfor %}
+                            </div>
+                            <hr>
+                            
+                        
+                        {% endif %}
+                        
+            {% endfor %}  
+
+{# fIN LES DESSERTS #}
+
+                {% endif %}
+                
+
+
+
+
+
+
+
+            {% endfor %}
+            
+            
+        </div>
+
+
+    {# Menu le bon mangeur #}
+        <div class="mangeur tout col-5">
+            
+
+            {% for menusCat in menusCat %}
+                {# sélection du menu avec l'id n°3 => "le pt'ijoueur" #}
+                {% if menusCat.id == 10 %}
+                <h4 class="text-center  display-6  text-decoration-underline  py-2 tracking-in-expand-fwd">{{ menusCat.titre }}</h4>
+                         <p class="text-center entreePlatDessert ">Entrée + Plat ou Plat + Déssert</p>
+
+                         <p class="display-6 text-center">{{ menusCat.prix| number_format(2) }}€</p>
+
+                           {% for cat in categorieProduit %}
+                               {# on va piocher la catégorie produit avec l'id 7 => les entrées #}
+                                {% if cat.id == 7 %}
+                                        {# Affichage du titre  #}
+                                        <div class="text-center ">
+                                            <p class="display-6 text-decoration-underline">{{ cat.titre }}</p>
+                                        </div>
+                                            
+                                        <br>
+
+                                {# Affichage des entrées #}
+                                <div class="text-center  ">
+
+                                    {% for pdt in produits %}
+                                           {# on va piocher les produits ayant la catégorie produit 7 => #}
+                                            {% if pdt.categorieMenus.id == 10 %}
+                                                     
+                                                     {% if pdt.categorie.id == 7 %}
+                                                     
+                                                     <p>{{pdt.titre}}</p>
+                                                     {% endif %}
+                                                       
+                                                        
+                                                   
+                                                    
+                                            {% endif %}
+                                             
+
+                                    {% endfor %}
+                                 </div>
+                                 <hr>
+                                 
+                                
+                                {% endif %}
+
+
+                                
+                           {% endfor %}  
+                    {# FIN AFFICHAGE DES ENTREES #}
+                            
+                    {# Les plats #}
+                   
+                   {% for cat in categorieProduit %}
+                               {# on va piocher la catégorie produit avec l'id 8 => les plats #}
+                                {% if cat.id == 8 %}
+                                        {# Affichage du titre  #}
+                                        <p class="text-center display-6 text-decoration-underline  ">
+                                            {{ cat.titre }}
+                                        </p>
+                                        <br>
+
+                                {# Affichage des plats #}
+                                <div class="text-center  ">
+
+                                    {% for pdt in produits %}
+                                           {# on va piocher les produits ayant la catégorie produit 8 => #}
+                                            {% if pdt.categorieMenus.id == 10 %}
+                                                     
+                                                     {% if pdt.categorie.id == 8 %}
+                                                     
+                                                     <p>{{pdt.titre}}</p>
+                                                     {% endif %}
+                                                                                                           
+                                                   
+                                                    
+                                            {% endif %}
+                                             
+
+                                    {% endfor %}
+                                 </div>
+                                 <hr>
+                                 
+                                
+                                {% endif %}
+
+
+                                
+                    {% endfor %}  
+                
+
+
+                {# FIN DES PLATS #}
+
+                {# LES DESSERTS #}
+                {% for cat in categorieProduit %}
+                               {# on va piocher la catégorie produit avec l'id 9 => les desserts #}
+                                {% if cat.id == 9 %}
+                                        {# Affichage du titre  #}
+                                        <p class="text-center text-decoration-underline display-6  ">
+                                            {{ cat.titre }}
+                                        </p>
+                                        <br>
+
+                                {# Affichage des desserts #}
+                                <div class="text-center ">
+
+                                    {% for pdt in produits %}
+                                           {# on va piocher les produits ayant la catégorie produit 9 => #}
+                                            {% if pdt.categorieMenus.id == 10 %}
+                                                     
+                                                     {% if pdt.categorie.id == 9 %}
+                                                     
+                                                     <p>{{pdt.titre}}</p>
+                                                     {% endif %}
+                                                   
+                                                    
+                                            {% endif %}
+                                             
+
+                                    {% endfor %}
+                                 </div>
+                                 <hr>
+                                 
+                                
+                                {% endif %}
+
+
+                                
+                    {% endfor %}  
+
+                {# fIN LES DESSERTS #}
+
+                {% endif %}
+                
+
+            {% endfor %}
+            
+                        
+        </div>
+
+</div>
+
+<div class="glouton mt-5   d-flex justify-content-center">
+        <div class="Tijoueur tout  col-5">
+            <p></p>
+            {% for menusCat in menusCat %}
+                {# sélection du menu avec l'id n°3 => "le pt'ijoueur" #}
+                {% if menusCat.id == 11 %}
+                <h4 class="text-center  display-6  text-decoration-underline  py-2 tracking-in-expand-fwd">{{ menusCat.titre }}</h4>
+                         <p class="text-center display-6">Entrée + Plat + Déssert</p>
+
+                         <p class="display-6 text-center">{{ menusCat.prix| number_format(2) }}€</p>
+                
+
+                {% endif %}
+                
+            {% endfor %}
+          
+        </div>
+</div>
+
+
+{% endblock %}

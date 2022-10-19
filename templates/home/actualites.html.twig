@@ -1,0 +1,204 @@
+{% extends 'basePage.html.twig' %}
+{% block title %} {{parent()}} | Actualités{% endblock %}
+
+{% block div %}Actualités{% endblock %}
+
+{% block style %}
+<style>
+body{
+    min-height: 100vh;
+    max-height: 10000vh;
+}
+.header-container{
+    background-image: url({{ asset('images/pano2paris.jpg' ) }});
+    }
+
+.nav-item{
+    background-color: rgba(255, 255, 255, 0.4);
+}
+.logoNom{
+    background-color: rgba(255, 255, 255, 0.4) ;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+}
+
+
+.imgActualites{
+     background-image: url({{ asset('images/imagevuefleurtoureiffel.jpg') }});
+}
+.logoNom{
+    background-color: rgba(255, 255, 255, 0.4) !important;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+}
+
+    </style>
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+        <div class="card mb-3 mx-auto py-0" style="max-width: 1000px;">
+            <div class="row g-0">
+                {# <div class="col-md-4 mt-3"> #}
+                    <img class="col-md-4" src="{{ asset('images/restaurant-illustration.jpg') }}" class="img-fluid rounded-start" alt="imaged'une table restaurant">
+                {# </div> #}
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h6 class="text-warning">Info</h6>
+                        <h5 class="card-title">Guerre en Ukraine : en France, les restaurants russes boycottés</h5>
+                        <p class="card-text">À Paris, des restaurants russes sont menacés quotidiennement par téléphone, certains sont même sous protection policière.</p>
+                        <p class="card-text d-flex justify-content-between align-items-center"><small class="text-muted">publié le 22/03/2022 à 08:50</small>
+                            <button class="btn btn-warning" type="checkbox" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                Voir l'article 
+                                {# {% if checked %}
+                                    <i class="fas fa-arrow-down"></i>
+                                    
+                                {% else %} #}
+                                    <i class="fas fa-arrow-right"></i>
+                                
+                                {# {% endif %} #}
+                            </button>
+                        </p>
+                    </div>
+                </div>        
+            </div>
+            <div class="row">
+                <div class="col-12 collapse" id="collapse1">
+                    <div class="card card-body">
+                        <p>
+                        Conséquence inattendue de la guerre en Ukraine, des restaurants et des épiceries russes sont boycottées, chez nous en France. Avec parfois un total contresens... Ainsi, une chaine de restaurants canadien, spécialiste de la "Poutine", ce plat à base de frites, de fromage et de sauce brune - a essuyé nombre d'insultes et de menaces. Des clients étaient persuadés qu'il y avait un lien entre ce met québécois et le président russe.
+                        </p>
+                        <p>On constate ce boycott dans la capitale avec des conséquences économiques dramatiques pour ces professionnels qui ont beau le répéter, ils n'ont rien à voir avec la guerre. Dans le XVIe arrondissement de Paris, "La cantine russe" est placée sous protection policière.
+                        </p>
+                        <p>Idem pour la "Table des Russes", dont la gérante raconte recevoir des appels téléphoniques menaçants tous les jours. "Aujourd'hui, on a fait zéro couvert le matin, zéro couvert le soir", déplore-t-elle, y compris avec les plateformes de restauration à emporter.
+                        </p>
+                        <p>"Nous sommes ambassadeurs de l'art culinaire, <b>on n'a rien à voir avec la guerre, on est contre la guerre"</b>, affirme-t-elle. D'autres, comme la "Maison russe", ont décidé de changer de nom. Elle se fait désormais appeler "Maison R."
+                        </p>
+                    </div>
+                </div>
+            </div>  
+        </div>
+
+        <div class="card mb-3 mx-auto py-0" style="max-width: 1000px;">
+            <div class="row g-0">
+                {# <div class="col-md-4 mt-3"> #}
+                    <img class="col-md-4" src="{{ asset('images/tickets-restaurant-illustration.jpg') }}" class="img-fluid rounded-start" alt="image représentant des tickets-restaurants">
+                {# </div> #}
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h6 class="text-warning">Restaurant</h6>
+                        <h5 class="card-title">Titres-restaurant : pourquoi certains tickets 2021 ne sont plus acceptés ?</h5>
+                        <p class="card-text">Alors que beaucoup pensaient qu'ils étaient prolongés jusqu'au 28 février, certains tickets restaurant 2021 ne sont plus valables depuis le début du mois. Explications.</p>
+                        <p class="card-text d-flex justify-content-between align-items-center"><small class="text-muted">publié le 04/02/2022 à 06:43</small>
+                            <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                Voir l'article <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </p>
+                    </div>
+                </div>        
+            </div>
+            <div class="row">
+                <div class="col-12 collapse" id="collapse2">
+                    <div class="card card-body">
+                        <p>
+                        Depuis le début du mois de février, des utilisateurs de tickets restaurant en version papier se voient refuser leurs titres de 2021, alors que plusieurs médias avaient indiqué qu'ils étaient valables jusqu'au 28 février 2022.
+                        </p>
+                        <p> En réalité, la confusion provient d'un décret publié le 20 octobre dernier. Celui-ci prolonge le plafond à 38 euros par jour des tickets restaurant 2021 jusqu'au 28 février 2022, indique le site du Service Public. Mais il ne précise pas que la date de validité de tous les titres est prolongée jusqu'à cette date. Seuls les titres dématérialisés sont alors sûrs d'être valables jusqu'à la fin du mois.
+                        </p>
+                        <p>C'est ce que précise le groupe Up à Ouest-France : "les titres-restaurant doivent être présentés au remboursement par les commerçants avant fin février, ce qui rend matériellement impossible d’accepter des titres papier jusqu’au 28 car le temps manquera pour les envoyer et les traiter". Ainsi, les conditions habituelles instaurées par la Commission nationale des titres-restaurant s'appliquent. Leur validité a bien pris fin le 31 janvier. 
+                        </p>
+                        <h5><b>Possibilité de les échanger avant fin février</b></h5>
+                        <p>Utilisables dans les restaurants, brasseries ou établissements faisant du click and collect et des livraisons dans la limite de 38 euros journaliers, y compris les week-end et jours fériés, les titres restaurants sont limités à 19 euros par jour dans les supermarchés et magasins alimentaires sauf les dimanches et jours fériés. 
+                        </p>
+                        <p>Si vos tickets 2021 ne sont plus acceptés dans certains établissements, vous êtes en droit de les échanger gratuitement contre des titres-restaurant 2022 en les rendant à votre employeur avant le 15 février. Pour ceux qui possèdent des titres dématérialisés, le report de solde se fait parfois automatiquement. 
+                        </p>
+                    </div>
+                </div>
+            </div>  
+        </div>
+
+        <div class="card mb-3 mx-auto py-0" style="max-width: 1000px;">
+            <div class="row g-0">
+                {# <div class="col-md-4 mt-3"> #}
+                    <img class="col-md-4" src="{{ asset('images/coronaviruscontrole.jpeg') }}" class="img-fluid rounded-start" alt="image représentant contrôle pass sanitaire">
+                {# </div> #}
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h6 class="text-warning">Coronavirus France</h6>
+                        <h5 class="card-title">Coronavirus : comment le passe vaccinal sera-t-il contrôlé ?</h5>
+                        <p class="card-text">ÉCLAIRAGE - Les établissements recevant du public et soumis au passe auront la possibilité de demander une pièce d'identité lors de la vérification du certificat.</p>
+                        <p class="card-text d-flex justify-content-between align-items-center"><small class="text-muted">publié le 27/12/2021 à 19:01</small>
+                            <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                Voir l'article <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </p>
+                    </div>
+                </div>        
+            </div>
+            <div class="row">
+                <div class="col-12 collapse" id="collapse3">
+                    <div class="card card-body">
+                        <p>
+                        Le gouvernement envisage de faire entrer en vigueur le passe vaccinal dès le milieu du mois de janvier 2022. Une interrogation se fait jour, celle de son contrôle et de ses modalités. Attribué à tous les Français ayant reçu une triple dose et afin d'éviter que certains ne s'approprient le passe du voisin, du copain ou du frère, les responsables d'établissements pourraient être habilités à contrôler les identités des clients en cas de doute sur la personne présentant le QR code.
+                        </p>
+                        <p>Côté sanction, si quelqu'un s'est approprié un certificat qui n'est pas le sien, l'amende s'élèvera à 1.000 euros contre seulement 135 jusqu'à présent. Aujourd'hui, seuls les agents de police judiciaire ont le droit de procéder à ces contrôles d'identité. Le gouvernement va donc devoir faire évoluer la loi et octroyer à des privés, un pouvoir qui était jusqu'à présent réservé à l'autorité publique. Une mesure que des spécialistes du droit jugent déjà anticonstitutionnelle. 
+                        </p>
+                        <p>L'une des pistes privilégiées est désormais de permettre une vérification sans aucun pouvoir, en cas de litige. S'ils constatent une fraude, les restaurateurs par exemple pourraient simplement refuser l'accès au client, <b>seule les forces de l'ordre pouvant sanctionner.</b>
+                        </p>
+                    </div>
+                </div>
+            </div>  
+        </div>
+
+        <div class="card mb-3 mx-auto py-0" style="max-width: 1000px;">
+            <div class="row g-0">
+                {# <div class="col-md-4 mt-3"> #}
+                    <img class="col-md-4" src="{{ asset('images/piste-de-danse-illustration.jpg') }}" class="img-fluid rounded-start" alt="image d'une piste de danse">
+                {# </div> #}
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h6 class="text-warning">Coronavirus</h6>
+                        <h5 class="card-title">Coronavirus : le gouvernement interdit de danser dans les bars et restaurants dès vendredi</h5>
+                        <p class="card-text">Après la fermeture des discothèques, l'État a décidé d'interdire les danses dans les bars et restaurants pendant quatre semaines.</p>
+                        <p class="card-text d-flex justify-content-between align-items-center"><small class="text-muted">publié le 08/12/2021 à 18:11</small>
+                            <button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                Voir l'article <i class="fas fa-arrow-right arrowRightDown"></i>
+                            </button>
+                        </p>
+                    </div>
+                </div>        
+            </div>
+            <div class="row">
+                <div class="col-12 collapse" id="collapse4">
+                    <div class="card card-body">
+                        <p>
+                        Après les discothèques, le gouvernement a décidé de s'attaquer aux bars et restaurants. Dans un décret paru au Journal Officiel ce mercredi, l'État a décidé d'interdire les personnes de danser dans les bars et restaurants à partir de vendredi matin jusqu'au 6 janvier inclus. 
+                        </p>
+                        <p> Une mesure moins lourde que pour les boîtes de nuit, qui elles seront fermées jusqu'au 6 janvier, mais un coup dur pour les professionnels du secteur dans cette période généralement chargée entre Noël et le Nouvel an.  
+                        </p>
+                        <p>Cette décision s'appuie sur une étude réalisée par l'Institut Pasteur, parue en novembre dans la revue médicale The Lancet. L'étude avait conclu que les boîtes de nuit étaient "des lieux à haut risque de transmission", car ce sont des lieux clos mal ventilés, où le coronavirus peut rester plus facilement en suspension dans l'air. 
+                        </p>
+                        <p>Reste à voir désormais si les patrons de restaurants et de bars seront <b>indemnisés pour compenser une éventuelle perte de revenus ou non.</b> 
+                        </p>
+                    </div>
+                </div>
+            </div>  
+        </div>
+</div>
+
+<div class="actualitesCadre">
+
+    <div class="imgActualites">
+        <div class="cadreContainerPhrase">
+            <a class="navbar-brand logoNom" href="{{ path('home') }}"> <img src="{{asset('images/logo-centre.png') }}" alt="" width="50" srcset="">Notre Resto</a>
+            <h2>ON Y MANGE BIEN, ON S'Y SENT BIEN</h2>
+            <a id="boutonSavoirPlus" href="{{ path('presentation') }}">EN SAVOIR PLUS</a>
+        </div> 
+    </div>
+
+</div>
+
+{% endblock %}

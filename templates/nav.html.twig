@@ -1,0 +1,92 @@
+
+<nav class="navbar navbar-light navbar-expand-lg bg-transparent ">
+  <div class="container-fluid ">
+
+    <a class="navbar-brand logoNom" href="{{ path('home') }}"> <img src="{{asset('images/logo-centre.png') }}" alt="" width="50" srcset="">Notre Resto</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvasLg" aria-controls="navbarOffcanvasLg">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="offcanvas offcanvas-end " tabindex="-1" id="navbarOffcanvasLg" aria-labelledby="navbarOffcanvasLgLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="{{asset('images/logo-centre.png') }}" alt="" width="50" srcset="">Notre Resto</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+
+      <div class="offcanvas-body ">
+        <ul class="navbar-nav justify-content-center align-items-center mx-auto flex-grow-1 nav-user ">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{ path('home') }}">Accueil</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              La carte
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+              <li>
+              <a class="dropdown-item" href="{{ path('carte_plats')  }}">La carte du restaurant</a>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li>
+              <a class="dropdown-item" href="{{ path('carte_boissons') }}">La carte des boissons</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{{ path('app_menus') }}">Menus</a>
+          </li>
+         
+          <div class="espaceNav"></div>
+
+          <li class="nav-item">
+            <a class="nav-link active" href="{{ path('presentation') }}">Présentation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{{ path('actualites') }}">Actualités</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="{{ path('contact') }}">Contact</a>
+          </li>
+          </ul>
+          
+
+{% if app.user %} {# Si l'utilisateur se connecte en ADMIN le bouton déconnexion apparaîtra #}
+    {% if is_granted('ROLE_ADMIN') %}
+         <nav class="navbar navbar-expand-lg navbar-light my-2">
+            <ul class="navbar-nav navbar-light justify-content-center flex-grow-1 nav-admin">
+            
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ path('home') }}">{{ app.user.prenom|capitalize }}</a>
+                </li>  
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">ADMIN</a>
+                <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+
+                <li><a class="dropdown-item" href="{{ path('produit_afficher') }}">Produits</a></li>
+                <li><a class="dropdown-item" href="{{ path('app_admin_categorie_produit_index')  }}">Catégories produits</a></li>
+                <li><a class="dropdown-item" href="{{ path('categorie_afficher') }}">Catégories Menus</a></li>
+                
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                
+                <li><a class="dropdown-item" href="{{ path('admin_boisson') }}">Boissons</a></li>
+                <li><a class="dropdown-item" href="{{ path('admin_categorie_boisson') }}">Categorie boissons</a></li>
+                    <hr class="dropdown-divider">
+                <li><a class="dropdown-item" href="{{ path('app_register') }}">Inscription</a></li>
+
+                </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{{ path('app_logout') }}">Déconnexion</a>
+                    </li>  
+            </ul>
+    
+    {% endif %}
+    
+{% endif %}
+            </div>
+        </nav>
+

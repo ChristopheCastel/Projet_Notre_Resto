@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CategorieBoisson index{% endblock %}
+
+{% block body %}
+
+<div class="produit px-3 py-3">
+    <h1 class="text-center mb-5">Categorie Boisson </h1>
+
+
+    <a class="btn btn-success" href="{{ path('admin_categorie_boisson_new') }}">Créer une nouvelle catégorie</a>
+
+    <div class="text-center">
+    {% for message in app.flashes('success') %}
+            <div class="alert alert-success col-4 mx-auto">
+                {{ message }}
+            </div>
+    {% endfor %}
+</div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Modifier</th>
+                <th>Supprimer</th>
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for categorie_boisson in categorie_boissons %}
+            <tr>
+                <td>{{ categorie_boisson.id }}</td>
+                <td>{{ categorie_boisson.titre }}</td>
+                <td>
+                    
+                    <a href="{{ path('admin_categorie_boisson_edit', {'id': categorie_boisson.id}) }}"><img class="icone" src="{{ asset('images/modif.png')}}" alt=""></a>
+
+                </td>
+                 <td>
+                    
+                    {% include "admin_categorie_boisson/_delete_form.html.twig" %}
+                    
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Aucun enregistrement effectué</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+{% endblock %}

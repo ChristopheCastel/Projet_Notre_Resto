@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('app_admin_categorie_menus_delete', {'id': admin_categorie_menu.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ admin_categorie_menu.id) }}">
+    <button class="btn"><img class="icone bg-white" src="{{ asset('images/delete.jpg')}}" alt=""> </button>
+    
+</form>

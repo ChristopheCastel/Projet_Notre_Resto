@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier boisson{% endblock %}
+
+{% block body %}
+
+<div class="produit px-3 py-3">
+    <h1>Modifier boisson</h1>
+
+    {{ include('admin_boisson/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+    <a class="btn btn-info ms-5 mb-5" href="{{ path('admin_boisson') }}">retour à la liste</a>
+
+    {{ include('admin_boisson/_delete_form.html.twig') }}
+</div>
+{% endblock %}

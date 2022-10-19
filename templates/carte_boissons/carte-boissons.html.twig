@@ -1,0 +1,221 @@
+{% extends 'basePage.html.twig' %}
+
+{% block title %}{{ parent() }}|Carte des boissons  {% endblock %}
+{% block style %}
+<style>
+.header-container{
+    background-image: url({{ asset('images/decantore.jpg') }});
+    
+    }
+
+.nav-item{
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.logoNom{
+    background-color: rgba(255, 255, 255, 0.4) ;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+}
+
+</style>
+{% endblock %}
+
+{% block div %}La carte des boissons{% endblock %}
+
+{% block body %}
+
+{# Création affichage carte des boissons #}
+<div class="col-md-4 mx-auto bg-white pt-5 carte">
+
+    
+    {% for cat in categorie %}
+
+        <div class="col-sm-4 col-md-6 mx-auto">
+
+            <div class="">
+                {# On va chercher l' ID n°1 dans catégorie boissons -> "vins rouge" #}
+                    {# Les vins rouge #}
+                {% if cat.id == 1 %}
+                    <h4 class="text-center border border-danger rounded-circle ">{{cat.titre}}</h4>
+                
+                    
+                    {# on bloucle sur la table boisson la catégorie avec l'id n°1 -> "vins rouge" #}
+                    {% for boisson in boissons %}
+                        {% if boisson.categorie.id == 1 %}
+                            <div class="d-flex justify-content-between ">
+                            {# on va chercher le titre et le prix des boissons dans la catégorie vins rouge #}
+                                <p class="">{{boisson.titre}} </p>
+                                <p class=" ps-auto">{{boisson.prix}}€</p>
+                            </div>
+                        {% endif %}
+
+                            
+                    {% endfor %}
+                                    
+                            
+                {% endif %}         
+                    
+                    
+            </div> 
+
+        </div>
+        
+
+    {# Les vins blanc #}
+            
+    <div class="col-sm-4  col-md-6 mx-auto ">
+
+        <div>
+                
+    
+            {% if cat.id == 2 %}
+                <h4 class="text-center border border-danger rounded-circle ">{{cat.titre}}</h4>
+                
+                    {% for boisson in boissons %}
+                        {% if boisson.categorie.id == 2 %}
+                            <div class="d-flex justify-content-between ">
+                                    
+                                <p class="">{{boisson.titre}} </p>
+                                <p class=" ps-auto">{{boisson.prix}}€</p>
+                            </div>
+                        {% endif %}
+
+                                    
+                    {% endfor %}
+                                    
+                            
+            {% endif %}         
+                    
+                    
+        </div>    
+    </div>
+                    
+                            
+                                
+
+        {# Les soft #}
+            
+    <div class="col-sm-4 col-md-6 mx-auto ">
+
+        <div>
+                
+    
+            {% if cat.id == 3 %}
+                <h4 class="text-center border border-danger rounded-circle">{{cat.titre}}</h4>
+            
+                    {% for boisson in boissons %}
+                        {% if boisson.categorie.id == 3 %}
+                            <div class="d-flex justify-content-between ">
+                    
+                                <p class="">{{boisson.titre}} </p>
+                                <p class=" ps-auto">{{boisson.prix}}€</p>
+                            </div>
+                        {% endif %}
+
+                    
+                    {% endfor %}
+                                
+                        
+            {% endif %}         
+                
+                
+        </div>    
+    </div>
+            
+
+            
+        {# Les eaux minérales #}
+            
+    <div class="col-sm-4  col-md-6 mx-auto">
+
+        <div>
+            
+
+            {% if cat.id == 4 %}
+                <h4 class="text-center border border-danger rounded-circle">{{cat.titre}}</h4>
+            
+                    {% for boisson in boissons %}
+                        {% if boisson.categorie.id == 4 %}
+                            <div class="d-flex justify-content-between ">
+                                
+                                <p class="">{{boisson.titre}} </p>
+                                <p class=" ps-auto">{{boisson.prix}}€</p>
+                            </div>
+                        {% endif %}
+
+                                
+                    {% endfor %}
+                                
+                        
+            {% endif %}         
+                
+                
+        </div>    
+    </div> 
+    
+
+    {# Les eaux gazeuses #}
+        
+        <div class="col-sm-4  col-md-6 mx-auto">
+
+        <div>
+            
+
+            {% if cat.id == 6 %}
+                <h4 class="text-center border border-danger rounded-circle">{{cat.titre}}</h4>
+            
+                    {% for boisson in boissons %}
+                        {% if boisson.categorie.id == 6 %}
+                            <div class="d-flex justify-content-between ">
+                                
+                                <p class="">{{boisson.titre}} </p>
+                                <p class=" ps-auto">{{boisson.prix}}€</p>
+                            </div>
+                        {% endif %}
+
+                                
+                    {% endfor %}
+                                
+                        
+            {% endif %}         
+                
+                
+        </div>    
+    </div> 
+
+
+    {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+{% block stylesheets %}
+
+<style>
+h4{
+    /* text-decoration: underline red; */
+    
+}
+.carte{
+    border-radius: 50px;
+    margin-bottom: 50px;
+}
+
+
+</style>
+{% endblock %}
+
+
+
+{% endblock %}

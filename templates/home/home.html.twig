@@ -1,0 +1,61 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %} {{parent()}} | Home{% endblock %}
+
+{% block style %}
+
+<style>
+
+.espaceNav{
+    display: inline-block;
+    width: 100px;
+    padding-left: 100px;
+    padding-right: 50px;  
+}
+  
+body{
+    background-image: url('https://www.sortiraparis.com/images/80/91874/582754-photos-le-cafe-de-l-homme.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.footer-taille{
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+}
+  </style>
+{% endblock %}
+
+{% block body %}
+<body>
+    <div class="body-home">
+        <div class="body-home-content">
+            
+            {% block h1 %}
+            <h1 class="mx-auto text-center text-warning rounded-1">
+            <span class="h1 px-2 py-1 logoHome text-decoration-underline text-warning">
+            {# <img src="{{asset('images/logo-centre.png') }}" alt="" width="100" srcset=""> #}
+            Notre resto</span> 
+            <span class="h1 mx-auto px-2 py-1">RESTAURANT - BAR - BRASSERIE</span></h1>
+            {% endblock %}
+   
+
+            <div class="d-flex justify-content-center mt-5">
+
+                <a class="btn btn-outline-light call" href="{{ path('reserver') }}">Réserver maintenant</a>
+
+            </div>
+
+            {# <button type="checkbox" class="btn btn-primary">Primary</button> #}
+          
+        </div>
+
+       {% include "footer.html.twig" %}
+
+    </div>
+</body>
+{% endblock %}
+

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit AdminCategorieMenus{% endblock %}
+
+    
+
+
+{% block body %}
+
+
+    <h1 class="text-center">Modifier le menu</h1>
+
+    {{ include('admin_categorie_menus/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+    <a class="btn btn-info" href="{{ path('categorie_afficher') }}">Retour</a>
+
+    
+{% endblock %}

@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('admin_boisson_delete', {'id': boisson.id}) }}" onsubmit="Confirmation de la suppression('Etes-vous certain de bien vouloir supprimer cet élément?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ boisson.id) }}">
+     <button class="btn"><img class="icone bg-white" src="{{ asset('images/delete.jpg')}}" alt=""> </button>
+
+</form>

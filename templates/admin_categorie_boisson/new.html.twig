@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}}|Nouvelle Categorie Boisson{% endblock %}
+
+{% block body %}
+
+<div class="produit py-3 px-3">
+    <h1>Créeer une nouvelle CategorieBoisson</h1>
+
+    {{ include('admin_categorie_boisson/_form.html.twig') }}
+
+    <a href="{{ path('admin_categorie_boisson') }}">retour à la liste</a>
+</div>
+{% endblock %}

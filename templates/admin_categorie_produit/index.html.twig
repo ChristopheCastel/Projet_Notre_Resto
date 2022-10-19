@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}{{ parent() }}|Catégorie{% endblock %}
+
+
+{% block body %}
+
+<div class="produit px-3 py-3">
+    <h1 class="text-center mb-5 ">Gestion catégorie</h1>
+
+    <div class="text-center">
+    {% for message in app.flashes('success') %}
+            <div class="alert alert-success col-4 mx-auto">
+                {{ message }}
+            </div>
+    {% endfor %}
+</div>
+
+    <a class="btn btn-success ms-3 mb-4" href="{{ path('app_admin_categorie_produit_new') }}">nouvelle catégorie</a>
+<div class="col-md-10 mx-auto">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>modifier</th>
+                <th>supprimer</th>
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for categorie_produit in categorie_produits %}
+            <tr>
+                <td>{{ categorie_produit.id }}</td>
+                <td>{{ categorie_produit.titre }}</td>
+                <td>
+                    <a href="{{ path('app_admin_categorie_produit_edit', {'id': categorie_produit.id}) }}"><img class="icone" src="{{ asset('images/modif.png')}}" alt=""></a>
+                    
+                </td>
+                 <td>
+                    
+                    {% include "admin_categorie_produit/_delete_form.html.twig" %}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Pas de catégories de créer</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+{% endblock %}

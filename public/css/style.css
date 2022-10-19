@@ -1,0 +1,390 @@
+/* font familly work sans 400 regular */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Philosopher&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+
+/*hover des li de la navbar */
+.navbar li:after{
+    content: '';
+    width: 100%;
+    height: 2.5px;
+    background-color: rgb(31, 31, 31);
+    display: block;
+    visibility: hidden;
+}
+.navbar li:hover:after{
+    visibility:visible;
+}
+  
+*{
+    font-family: 'Work Sans', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+/* reset Css */
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
+}
+
+.body-home{
+    margin: 0;
+    height: 100%;
+
+}
+.h1{
+    margin-bottom: 0 !important;
+}  
+  
+h1{
+    margin-top: 150px !important;
+    font-family: 'Montserrat', sans-serif;
+    /* color: #ceb857; */
+}
+.btnReserver{
+    background-color: rgba(0, 0, 0, 0.3);
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* mise en style du logo + Nom du resto */
+.logoNom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-family: 'Philosopher', sans-serif;
+}
+.logoHome{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-family: 'Philosopher', sans-serif;
+}
+
+.logoNom:hover{
+    color: black !important;
+}
+/* mise ne style font du titre dans modal */
+#offcanvasNavbarLabel{
+    font-family: 'Philosopher', sans-serif;
+}
+
+.footer-taille{
+    padding-top: 5px;
+    background-color: mintcream !important;
+    height: 60px;
+}
+
+footer{
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 5px;
+    background-color: mintcream !important; 
+}
+
+.fa-brands{
+    font-size: 20px;
+}
+
+
+/* mise en style de la page contact - formulaire + infos + map */
+.containerContact{
+    margin-top: 30px;
+    margin-bottom: 5px;
+    background-color: rgba(255, 255, 255, 0.95);
+    min-height: 100%; 
+}
+.messageSuccess{
+    height: 100px;
+}
+.spanGold{
+    color: #cc9966;
+    font-family: 'Philosopher', sans-serif;
+}
+.lienContactezNous{
+    padding: 5px 5px;
+    color: #cc9966;
+    font-family: 'Philosopher', sans-serif;
+    font-size: 20px;
+    background-color: white;
+    border: 2px solid #cc9966;
+    border-radius: 15px;
+    width: 200px;
+    transition: all 0.5s;
+}
+.lienContactezNous:hover{
+    background-color: #cc9966;
+    color: white;
+}
+.cadreMap{
+    position: relative;
+}
+#notreResto{
+    position: absolute;
+    font-family: 'Philosopher', sans-serif;
+    background-color: white;
+    left: 30px;
+    top: 15px;
+}
+#notreResto2{
+    position: absolute;
+    font-family: 'Philosopher', sans-serif;
+    background-color: white;
+    color: #C1413E;
+    left: 52%;
+    top: 33%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 30px;
+}
+.formulaireContainer{
+    margin-bottom: 75px;
+    margin-top: 225px; 
+}
+.formulaireContainerContent{
+    height: 100%;
+}
+.livraison{
+    height: 70%;
+    background-color: #223941;
+    color: white;
+}
+#livNomResto{
+    font-family: 'Philosopher', sans-serif;
+    font-size: 35px;  
+} 
+/* .formulaireContainerContent{
+    height: 80%;
+} */
+
+/* mise en style de la page présentation */
+.containerPresentation{
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 0px 0px 100px 0px;
+    height: 80%;
+    box-sizing: border-box;
+    
+}
+.titreGold{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    color: #cc9966;
+}
+.policePhilosopher{
+    font-family: 'Philosopher', sans-serif;
+    font-size: 20px;   
+}
+.sectionPresLacarte{
+    height: 80%;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+}
+.asideImgs img{
+    object-fit: cover;
+}
+.articleCadre{
+    background-color: rgba(255, 255, 255, 0.6);
+    height: 100%;
+    box-sizing: border-box;
+}
+.asideContent{
+    height: 80%;
+}
+
+/* mise en page de la présentation avec vu 40vh */
+.header-container{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40vh;
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.cadreTitrePage{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    background-color: #223941;
+    position: absolute;
+    text-align: center;
+    /* transform: translate(-50%,-20%); */
+    top: 90%;
+    font-family: 'Philosopher', sans-serif;
+    font-size: 30px;
+}
+
+.icone{
+    height: 50px;
+    color:white;
+}
+
+.produit{
+    margin-top: 50px;
+    background-color: white;
+    height: 100%;   
+}
+
+/* mise en style de la nav admin */
+/* .nav-admin{
+    background-color: rgba(0, 0, 0, 0.2);
+} */
+
+.nav-user{
+    font-size: 20px;
+    padding-right: 100px;
+}
+.espaceNav{
+    display: none;
+}
+
+.mentions-legales{
+    margin-top: 30px;
+    background-color: whitesmoke;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mentions-legales h2{
+    color: goldenrod;
+    margin-top: 50px;
+    width: 65%;
+}
+
+.mentions-legales strong{
+    font-size: 20px;
+}
+
+.mentions-legales p{   
+    width: 65%;
+}
+
+
+.img-entree{
+    width: 550px;
+}
+
+.image-plat{
+    width: 50vw;
+    display: flex;
+    justify-content: center; 
+}
+
+.entrées{
+    height: 100vh;
+}
+
+.aff-entree{
+    width: 50vw;
+    background-color: white;
+}
+
+.entreeTaille{
+    font-size: xx-large;
+}
+
+.call{
+    font-size: 30px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.img-plat{
+
+    width: 550px;
+    height: 900px;
+}
+
+.block{
+    display:inline-block;
+
+}
+.boutonsLacarte:hover{
+    background-color: mintcream !important;
+    color: #223941;
+    border: #223941 solid 2px;
+ 
+}
+.boutonsLacarte{
+    background-color: #223941 !important;
+    color: white;
+    border: #223941 solid 2px;
+
+}
+.connexion{
+    color: #223941;
+}
+
+/* mise en style de la page actualités */
+.actualitesCadre{
+    height: 50vh;
+    margin-top: 200px;
+    margin-bottom: 200px;
+}  
+.imgActualites{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+ 
+}
+.cadreContainerPhrase{
+        background-color: rgba(0, 0, 0, 0.3);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;     
+}
+    
+.cadreContainerPhrase > h2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 80px;
+    font-weight: 600;
+    color: #cc9966;
+}
+
+#spanNomResto{
+    font-family: 'Philosopher', sans-serif !important;
+    font-size: 25px;
+}
+#boutonSavoirPlus{
+    background-color: rgba(255, 255, 255, 0.4) !important;
+    display: flex;
+    padding: 15px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    color: black;
+    border: 1px solid transparent;
+    transition: all 0.5s !important;
+}
+#boutonSavoirPlus:hover{
+    background-color: transparent !important;
+    color: #cc9966 !important;
+    border: 1px solid #cc9966;
+}
+
+.logo-footer{
+    margin-left: 50px;
+    margin-right: -50px;
+}
+
+

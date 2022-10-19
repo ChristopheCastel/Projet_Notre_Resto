@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ parent() }}| Afficher   {% endblock %}
+   
+
+{% block body %}
+
+
+<div class="text-center">
+    {% for message in app.flashes('success') %}
+            <div class="alert alert-success col-4 mx-auto">
+                {{ message }}
+            </div>
+    {% endfor %}
+</div>
+
+<div class="produit px-3 py-3">
+
+    <a class="btn btn-success mb-3 ms-4" href="{{ path('admin_produit_ajouter') }}">Ajouter un nouveau produit</a>
+        
+    
+    <ul> 
+            <a class="btn btn-info" href="{{path('produit_afficher')}}">Toutes catégories</a>
+        {% for cat in listCategorieProduit %}
+            <a class="btn btn-primary" href="{{path('produit_afficher',{'cat': cat.titre})}}"><option value="">Catégorie {{cat.titre}}</option></a>
+            
+        {% endfor %}
+        
+        
+    
+        
+    </ul>
+
+
+    <table class="table ">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Prix</th>
+                <th>Description</th>
+                <th>Menu</th>
+                <th>Catégorie</th>
+                <th>Modifier</th>
+                <th>Supprimer</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for produit in produits %}
+            <tr>
+                <td>{{ produit.id }}</td>
+                <td>{{ produit.titre }}</td>
+                <td>{{ produit.prix }}</td>
+                <td>{{ produit.description }}</td>
+                <td>{{ produit.categorieMenus }}</td>
+
+                <td>{{ produit.categorie }}</td>
+
+                <td>
+                    <a href="{{ path('app_admin_produit_edit', {'id': produit.id}) }}"><img class="icone" src="{{ asset('images/modif.png')}}" alt=""></a>
+                    
+                </td>
+                 <td>
+                   
+                    {% include "admin_produit/_delete_form.html.twig" %}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Aucun produit en BDD</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+</div>
+{% endblock %}

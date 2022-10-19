@@ -1,0 +1,31 @@
+{# ici on va retrouver tous nos "flashes" / messages success - warning - error , que l'on va inclure dans nos pages avec {% include "flashes.html.twig" %} #}
+
+        {% for notification in app.flashes('success') %}
+
+            <div class="col-md-6 m-auto alert alert-success text-center">
+
+                {{ notification }}
+
+            </div>
+
+        {% endfor %} 
+
+        {% for notification in app.flashes('warning') %}
+
+            <div class="col-md-6 mx-auto alert alert-warning text-center">
+
+                {{ notification }}
+
+            </div>
+
+        {% endfor %} 
+
+        {% for notification in app.flashes('error') %}
+
+            <div class="col-md-6 mx-auto alert alert-danger text-center">
+
+                {{ notification }}
+                
+            </div>
+
+        {% endfor %}  

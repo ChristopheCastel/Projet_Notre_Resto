@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}}|Gestion des menus  {% endblock %}
+
+
+{% block body %}
+
+
+<div class="px-3 py-3">
+    <h1 class="text-center">Gestion des menus</h1>
+
+<div class="text-center">
+    {% for message in app.flashes('success') %}
+            <div class="alert alert-success col-4 mx-auto">
+                {{ message }}
+            </div>
+    {% endfor %}
+</div>
+
+    <a class="btn btn-success ms-3 mb-4" href="{{ path('app_admin_categorie_menus_new') }}">Créer un nouveau Menu</a>
+
+    <div class="col-md-10 mx-auto">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Prix</th>
+                <th>Modifier</th>
+                <th>Supprimer</th>
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for admin_categorie_menu in admin_categorie_menuses %}
+            <tr>
+                <td>{{ admin_categorie_menu.id }}</td>
+                <td>{{ admin_categorie_menu.titre }}</td>
+                <td>{{ admin_categorie_menu.prix }}</td>
+
+                <td>
+                    <a href="{{ path('app_admin_categorie_menus_edit', {'id': admin_categorie_menu.id }) }}"><img class="icone" src="{{ asset('images/modif.png')}}" alt=""></a>
+                    
+                </td>
+                <td>
+                    {% include "admin_categorie_menus/_delete_form.html.twig" %}
+                    
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</div>
+{% endblock %}

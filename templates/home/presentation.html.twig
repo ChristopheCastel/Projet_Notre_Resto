@@ -1,0 +1,86 @@
+{% extends 'basePage.html.twig' %}
+{% block title %} {{parent()}} | Présentation{% endblock %}
+
+{% block div %}Présentation{% endblock %}
+
+{% block style %}
+<style>
+body{
+    min-height: 100vh;
+    max-height: 10000vh;
+}
+
+.header-container{
+    background-image: url('https://toitoimontoit.fr/wp-content/uploads/2020/07/maison-blanche-1024x681.jpg');
+
+}
+.nav-item{
+    background-color: rgba(255, 255, 255, 0.4) !important;
+}
+.logoNom{
+    background-color: rgba(255, 255, 255, 0.4) ;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+}
+
+
+    </style>
+{% endblock %}
+
+{% block body %}
+
+   
+<div class="container">
+   
+        <div class="d-flex flex-column col-xs-12 align-items-center containerPresentation">
+            <h2 class="titreGold text-center">DANS UN CADRE MODERNE ET INTIMISTE,<br>
+
+            GOÛTEZ UNE CUISINE PLEINE DE SAVEURS.</h2>
+            <p class="policePhilosopher w-75 py-3 text-center">Niché au cœur de la Cité de l’Architecture à Paris, Notre Resto fait la part belle aux gestes d’antan, au service précis et affable, aux fruits de mer et poissons de nos côtes.
+            <br>
+            Imaginée par Joseph Dirand dans un esprit année 30, Notre Resto c’est un décor feutré, fait de banquettes crème, bar en marbre, plantes tropicales, pilastres d’origine… un style de table, un mélange d’allure, d’inattendu, d’insouciance dans un souffle très parisien.  Sans oublier une terrasse ravageuse, en tête-à-tête avec la Tour Eiffel.</p>
+        </div>
+ 
+    
+        <div class="d-flex flex-sm-column flex-shrink-1 flex-lg-row align-items-center sectionPresLacarte shadow p-3 mb-5 bg-body rounded">
+            <div class="col-xs-12 col-sm-auto col-md-6 d-flex flex-column articleCadre">
+                <h2>DÉCOUVRIR</h2>
+                <h3>LA CARTE !</h3>
+                <div class="articlesContent">
+                    <p>La carte, renouvelée toutes les quatre semaines, fait honneur aux produits de saison et aux produits frais, sublimés dans l’assiette ! On y découvre des plats de notre enfance, tout est fait maison !</p>
+                    <p></p>
+                    <p>VENEZ SAVOURER</p>
+                    <p><strong>Découvrez nos menus à partir de 19,90 €&nbsp;</strong></p>
+
+                <a href="{{ path('app_menus') }}" class="btn btn-lg boutonsLacarte">Nos menus</a>
+
+                <br>
+                <br>
+                <a href="{{ path('carte_plats')}}" class="btn btn-sm boutonsLacarte">Nos plats</a>
+                <a href="{{ path('carte_boissons')}}" class="btn btn-sm boutonsLacarte">Nos boissons</a>
+
+                </div>
+                <div class="d-flex flex-row flex-nowrap d-md-block d-lg-none mt-3"><img class="asideImgs" src="{{ asset('images/DecouvrirLaCarte3.jpg' ) }}" width="300px" alt="">
+                </div> 
+            </div>
+            
+            <div class="asideContent d-flex d-none d-lg-block col-6 align-items-center flex-wrap">
+                    
+                    <div class="d-flex flex-row mb-3"><img class="asideImgs" src="{{ asset('images/DecouvrirLaCarte1.jpg' ) }}" width="300px" alt="">
+                    <img class="asideImgs ps-2" src="{{ asset('images/DecouvrirLaCarte2.jpg' ) }}" width="300px" alt=""></div> 
+                    
+                    <div class="d-flex flex-row mb-3"><img class="asideImgs" src="{{ asset('images/DecouvrirLaCarte3.jpg' ) }}" width="300px" alt="">
+                    <img class="asideImgs ps-2" src="{{ asset('images/DecouvrirLaCarte4.jpg' ) }}" width="300px" alt=""></div>
+        
+            </div>
+        </div>
+  
+
+
+
+
+
+    
+</div>
+{% endblock %}

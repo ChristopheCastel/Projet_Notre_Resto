@@ -1,0 +1,123 @@
+{% extends 'basePage.html.twig' %}
+
+{% block title %} {{ parent() }} | Contact {% endblock %}
+
+{% block div %}Contact{% endblock %}
+
+{% block style %}
+<style>
+.header-container{
+    background-image: url({{ asset('images/Paris_pano.jpg' ) }});
+}
+.nav-item{
+    background-color: rgba(255, 255, 255, 0.4) ;
+}
+.logoNom{
+    background-color: rgba(255, 255, 255, 0.4) ;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+}
+
+</style>
+{% endblock %}
+
+{% block body %}
+
+    {% include "flashes.html.twig" %} {# on inclut ici nos messages error, warning, danger #}
+
+<div class="container containerContact">
+
+    {% block notification %}{% endblock %}
+
+    
+    <div class="row d-flex justify-content-center mb-5 mx-auto"> 
+
+                <div class="col-xs-12 col-lg-7 cadreMap">
+                    <div id="notreResto">Notre Resto</div>
+                    <div id="notreResto2">Notre Resto</div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d736.5503913503183!2d2.2885129546837435!3d48.8626502137616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fc3be4bbac3%3A0xc2c29f01c3bd849d!2sGirafe!5e0!3m2!1sfr!2sfr!4v1647441445855!5m2!1sfr!2sfr" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+                <div class="col-xs-12 col-lg-4 contactAccess text-start pb-3 pt-3 ps-5">
+
+                    <h3>Accès</h3>
+                    <p><span class="spanGold">
+                    Ouvert du mardi au samedi</span><br>
+                        09 h 00 - 00 h 00 <br>
+                        Toute l'année.<br></p>
+                    <p><span class="spanGold">Adresse : </span><br>
+                        1 Place du Trocadéro et du 11 novembre <br>
+                        75016 Paris <br>
+                    </p>
+                    <p><span class="spanGold">Tel : </span>01 46 75 75 75 <br></p>
+                    <p><span class="spanGold">Mail : </span><a href="mailto:contact@leresto.fr">contact@leresto.fr</a>
+                    <br></p>
+                </div>
+                
+    </div>
+        <div class="boutonNousContacter">
+        <a class="lienContactezNous mx-auto d-flex justify-content-center align-items-center mb-5" href="#contactezNous"><i class="fas fa-arrow-down me-2"></i>Nous contacter</a>
+        </div>
+      
+    <div class="row formulaireContainer shadow p-3 bg-body rounded d-flex align-items-center justify-content-evenly">      
+
+        <div class="col-xs-12 col-lg-6 px-3 formulaireContainerContent">
+
+            <div class="mx-auto mt-0 text-center">
+                <h2 class="titreGold mb-3" id="contactezNous">CONTACTEZ NOUS !</h2>
+                <P class="policePhilosopher mb-3">Pour toute demande d'information, veuillez remplir le forulaire ci dessous</P>
+            </div>
+     
+                
+            {{ form_start(contactForm) }}
+
+
+                <div class="row">
+                    <div class="col-6">
+                        {{ form_row(contactForm.nom) }}
+
+                    </div>
+                    <div class="col-6">
+                    {{ form_row(contactForm.prenom) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        {{ form_row(contactForm.codepostal) }}
+     
+                    </div>
+                    <div class="col-6">
+                    {{ form_row(contactForm.ville) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        {{ form_row(contactForm.telephone) }}
+     
+                    </div>
+                    <div class="col-6">
+                    {{ form_row(contactForm.email) }}
+                    </div>
+                </div>
+                {{ form_row(contactForm.message) }}
+                
+                <button type="submit" class="btn boutonsLacarte boutonEnvoyer align-center">ENVOYER</button>
+            {{ form_end(contactForm) }}
+                
+            
+
+        </div>
+        <div class="col-xs-10 col-lg-4 p-5 mt-5 mx-5 livraison text-center">
+            <h4>Bientôt chez</h4>
+            <span id="livNomResto">Notre Resto</span><br>
+            <img src="{{ asset('images/commander-uber-eats.png')}}" width="300px" alt="">
+            <img src="{{ asset('images/commander-deliveroo.png')}}" width="300px" alt="">
+        </div>
+
+        
+    </div>
+</div>
+
+
+{% endblock %}

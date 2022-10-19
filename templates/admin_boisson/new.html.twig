@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle Boisson{% endblock %}
+
+{% block body %}
+  
+<div class="produit px-3 py-3">
+    <h1>Créer une nouvelle Boisson</h1>
+
+    {{ include('admin_boisson/_form.html.twig') }}
+
+    <a href="{{ path('admin_boisson') }}">retour à la liste</a>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AdminCategorieMenus{% endblock %}
+
+{% block body %}
+    <h1>AdminCategorieMenus</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ admin_categorie_menu.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ admin_categorie_menu.titre }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('categorie_afficher') }}">back to list</a>
+
+    <a href="{{ path('app_admin_categorie_menus_edit', {'id': admin_categorie_menu.id}) }}">edit</a>
+
+    {{ include('admin_categorie_menus/_delete_form.html.twig') }}
+{% endblock %}
